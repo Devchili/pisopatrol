@@ -1,0 +1,19 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Home item -->
+    <item
+        android:id="@+id/nav_home"
+        android:title="Home"
+        android:icon="@drawable/home" />
+
+    <!-- Add Transaction item -->
+    <item
+        android:id="@+id/nav_add_transaction"
+        android:title="Add Transaction"
+        android:icon="@drawable/add" />
+
+    <!-- Transactions item -->
+    <item
+        android:id="@+id/nav_transactions"
+        android:title="Transactions"
+        android:icon="@drawable/transact" />
+</menu>

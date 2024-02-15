@@ -1,0 +1,48 @@
+<resources>
+    <string name="app_name">PisoPatrol</string>
+    <string name="instructions_text">Home Instructions:\n\n
+Overview:\n
+The Home provides an overview of recent transactions, current savings, and saving status.\n\n
+Recent Transactions:\n
+At the top of the, recent transactions are displayed.\n
+Each transaction includes details such as title, amount, type (expense or allowance), category (if applicable), duration, and notes.\n
+Transactions are listed with the most recent ones appearing first.\n\n
+Savings:\n
+The current savings amount is displayed prominently on the screen.\n
+It reflects the total amount saved up to the present moment.\n\n
+Savings Status:\n
+The saving status indicates the financial health based on the ratio of savings to expenses.\n
+It categorizes the status as Poor, Very Poor, Excellent, Very Good, or Good.\n\n
+Dropdown Menu:\n
+Clicking on the dropdown menu (three dots icon) located at the top right corner allows users to access additional options.\n\n
+Additional Options:\n
+The dropdown menu provides options to reset data and view information about the application.\n\n
+Add Transaction Instructions:\n
+Overview:\n
+The Add Transaction enables users to input new transactions into the application.\n\n
+Transaction Details:\n
+Users can input details such as title, amount, transaction type (expense or allowance), category (for expenses), duration (for allowances), and notes.\n\n
+Transaction Type Selection:\n
+Users can select whether the transaction is an expense or an allowance using radio buttons.\n
+When the expense option is selected, users can choose a category for the expense transaction.\n
+When the allowance option is selected, users can choose a duration for the allowance transaction.\n\n
+Add Button:\n
+Clicking the \'Add\' button adds the transaction to the application.\n
+If the transaction is an expense, it deducts the amount from the current savings.\n
+If the transaction is an allowance, it adds the amount to the current savings.\n\n
+Transactions Instructions:\n
+Overview:\n
+The Transactions displays a list of transactions along with filtering options and transaction statistics.\n\n
+Transaction List:\n
+Transactions are listed in a RecyclerView.\n
+Users can scroll through the list to view all transactions.\n\n
+Filtering:\n
+Users can filter transactions by selecting options from the dropdown spinner.\n
+Filter options include \'All\', \'Expense\', and \'Allowance\'.\n\n
+Transaction Statistics:\n
+Below the transaction list, a PieChart visualizes transaction statistics.\n
+It shows the distribution of expenses and allowances across different categories.\n
+Users can see the percentage breakdown of each category.\n\n
+PieChart Legend:\n
+A legend is displayed below the PieChart, indicating the categories and their corresponding colors.</string>
+</resources>

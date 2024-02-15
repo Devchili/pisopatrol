@@ -1,0 +1,185 @@
+<androidx.cardview.widget.CardView xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp"
+    app:cardCornerRadius="8dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="800dp"
+        android:padding="16dp"
+        android:background="#1EBAB5"
+        tools:context=".AddTransactionFragment">
+
+    <TextView
+        android:layout_width="266dp"
+        android:layout_height="42dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="1dp"
+        android:gravity="center"
+        android:text="New Transaction"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/text_view_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Title:"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:layout_marginTop="60dp"/>
+
+    <EditText
+        android:id="@+id/edit_text_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_view_title"
+        android:layout_marginTop="8dp"
+        android:inputType="text"
+        android:textColor="@color/black"
+        android:background="@color/white"
+        app:cardCornerRadius="8dp"
+        android:hint="Enter title"/>
+
+    <TextView
+        android:id="@+id/text_view_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter amount:"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:layout_below="@id/edit_text_title"
+        android:layout_marginTop="16dp"/>
+
+    <EditText
+        android:id="@+id/edit_text_amount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_view_amount"
+        android:layout_marginTop="8dp"
+        android:background="@color/white"
+        android:textColor="@color/black"
+        android:inputType="numberDecimal"
+        app:cardCornerRadius="8dp"
+        android:hint="Enter amount"/>
+
+    <TextView
+        android:id="@+id/text_view_transaction_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Transaction type:"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:layout_below="@id/edit_text_amount"
+        android:layout_marginTop="16dp"/>
+
+    <RadioGroup
+        android:id="@+id/radio_group_transaction_type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_view_transaction_type"
+        android:layout_marginTop="8dp"
+        android:background="@color/white"
+        app:cardCornerRadius="8dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/radio_button_expense"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="Expense"/>
+
+        <RadioButton
+            android:id="@+id/radio_button_allowance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="Allowance"/>
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/text_view_category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/radio_group_transaction_type"
+        android:layout_marginTop="4dp"
+        android:text="Category:"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:visibility="gone" />
+
+    <Spinner
+        android:id="@+id/spinner_category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_view_category"
+        android:layout_marginTop="0dp"
+        android:textColor="@color/black"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/text_view_note"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/radio_group_transaction_type"
+        android:layout_marginTop="50dp"
+        android:text="Type a note:"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/edit_text_note"
+        android:layout_width="380dp"
+        android:layout_height="61dp"
+        android:layout_below="@id/text_view_note"
+        android:layout_marginTop="6dp"
+        android:hint="Enter note"
+        android:textColor="@color/black"
+        android:background="@color/white"
+        android:inputType="textMultiLine"
+        app:cardCornerRadius="20dp"
+        android:lines   ="4" />
+
+    <TextView
+        android:id="@+id/text_view_date_duration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edit_text_note"
+        android:layout_marginTop="10dp"
+        android:text="Date duration:"
+        android:textColor="@color/black"
+        android:visibility="gone"
+        android:textSize="18sp" />
+
+    <Spinner
+        android:id="@+id/spinner_date_duration"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_view_date_duration"
+        app:cardCornerRadius="8dp"
+        android:layout_marginTop="3dp"
+        android:visibility="gone"/>
+
+        <Button
+            android:id="@+id/button_add_transaction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/spinner_date_duration"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="72dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="62dp"
+            android:backgroundTint="#185DB3"
+            android:shadowRadius="@integer/material_motion_duration_long_1"
+            android:text="Add Transaction"
+            android:textColor="@color/white" />
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
