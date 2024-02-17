@@ -1,0 +1,240 @@
+<androidx.cardview.widget.CardView xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_view_savings_trend"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp"
+    app:cardCornerRadius="8dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="848dp"
+        android:background="#1EBAB5"
+        android:padding="16dp"
+        tools:context=".HomeFragment">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:layout_centerHorizontal="true">
+
+            <ImageView
+                android:id="@+id/image_view_title"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/pisopatrol" />
+
+            <!-- Add a Toolbar for the dropdown menu -->
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_gravity="top"
+                android:layout_marginTop="8dp"
+                android:background="@android:color/transparent"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:title="">
+
+                <!-- Define the dropdown menu icon -->
+                <ImageView
+                    android:id="@+id/dropdown_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/dropdown"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="16dp"
+                    android:contentDescription="Dropdown Menu" />
+
+
+            </androidx.appcompat.widget.Toolbar>
+
+        </FrameLayout>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view_savings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/image_view_title"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="80dp"
+            app:cardCornerRadius="8dp"
+            tools:ignore="NotSibling">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:background="#4AC0DE"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/text_view_savings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="Current savings:"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+
+                <!-- Add additional content for current savings here -->
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Card for Saving Status -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view_saving_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/card_view_savings"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            app:cardCornerRadius="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#4AC0DE"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/text_view_saving_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Savings status:"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <!-- Add additional content for saving status here -->
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Card for Recent Transactions -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view_recent_transactions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/card_view_saving_status"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            app:cardCornerRadius="8dp">
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:orientation="vertical"
+                    android:background="@color/white"
+                    android:backgroundTint="#49BFDC"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Recent transactions:"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/text_view_recent_transactions"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <androidx.core.widget.NestedScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="200dp"
+                        android:background="#4AC0DE">
+
+                    <!-- RecyclerView for recent transactions -->
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recycler_view_transactions"
+                        android:layout_width="match_parent"
+                        android:layout_height="137dp" />
+
+            </androidx.core.widget.NestedScrollView>
+
+                </LinearLayout>
+
+
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Card for Retained Savings -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view_retained_savings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/card_view_recent_transactions"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            app:cardCornerRadius="8dp">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="#1EB9B4"
+                android:orientation="vertical"
+                android:padding="0dp">
+
+                <TextView
+                    android:id="@+id/text_view_savings_change_indicator"
+                    android:layout_width="300dp"
+                    android:layout_height="47dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/text_view_retained_savings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/white"
+                    android:textSize="1sp"
+                    android:visibility="invisible" />
+
+            </LinearLayout>
+
+
+
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
