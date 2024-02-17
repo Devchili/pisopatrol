@@ -123,12 +123,11 @@ public class AddTransactionFragment extends Fragment {
     private void addTransaction() {
         String title = titleEditText.getText().toString();
         String amountString = amountEditText.getText().toString();
-        String note = noteEditText.getText().toString();
         String category = "";
         String dateDuration = dateDurationSpinner.getSelectedItem().toString();
 
-        if (title.isEmpty() || amountString.isEmpty() || note.isEmpty()) {
-            Toast.makeText(requireContext(), "Please fill in all fields", Toast.LENGTH_SHORT).show();
+        if (title.isEmpty() || amountString.isEmpty()) {
+            Toast.makeText(requireContext(), "Please fill in all required fields", Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -171,6 +170,7 @@ public class AddTransactionFragment extends Fragment {
         }
 
         // Add transaction to the list
+        String note = noteEditText.getText().toString(); // Get note text
         transactions.add(new Transaction(title, amount, note, category, dateDuration, expenseRadioButton.isChecked() ? "Expense" : "Allowance"));
 
         SharedPreferences.Editor transactionEditor = transactionSharedPreferences.edit();
@@ -183,5 +183,6 @@ public class AddTransactionFragment extends Fragment {
                 .replace(R.id.fragment_container, new HomeFragment())
                 .commit();
     }
+
 
 }

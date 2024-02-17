@@ -12,6 +12,8 @@ public class Transaction {
     private String type;
     private Calendar date;
 
+    private boolean isRetainedSavings;
+
     // Constructor
     public Transaction(String title, float amount, String note, String category, String dateDuration, String type) {
         this.title = title;
@@ -79,4 +81,20 @@ public class Transaction {
     public void setDate(Calendar date) {
         this.date = date;
     }
+
+    // Getters and setters for the new field
+    public boolean isRetainedSavings() {
+        return isRetainedSavings;
+    }
+
+    public void setRetainedSavings(boolean retainedSavings) {
+        isRetainedSavings = retainedSavings;
+    }
+
+    public void addWeekToDuration() {
+        // Assuming date is a Calendar instance representing the transaction date
+        date.add(Calendar.WEEK_OF_YEAR, 1);
+    }
+
+
 }

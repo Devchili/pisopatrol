@@ -45,4 +45,13 @@ It shows the distribution of expenses and allowances across different categories
 Users can see the percentage breakdown of each category.\n\n
 PieChart Legend:\n
 A legend is displayed below the PieChart, indicating the categories and their corresponding colors.</string>
+
+    <string name="confirmation_title">Confirmation</string>
+    <string name="confirmation_message">Are you sure you want to reset all data? This action cannot be undone.</string>
+    <string name="reset">Reset</string>
+    <string name="cancel">Cancel</string>
+    <string name="data_reset_confirmation">Data has been reset.</string>
+    <string name="current_savings">Current savings: %s</string>
+
+
 </resources>

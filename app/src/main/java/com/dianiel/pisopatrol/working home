@@ -230,28 +230,36 @@ public class HomeFragment extends Fragment {
         processedExpiredTransactions.add(expiredTransaction);
 
         float lastCurrentSavings = savingsSharedPreferences.getFloat(SAVINGS_KEY, 0);
-        float amountToRemove = expiredTransaction.getAmount();
 
-        // Ensure the deduction won't make the savings negative
-        float currentSavings = Math.max(lastCurrentSavings - amountToRemove, 0);
+        // Deduct the amount of the expired transaction from the current savings
+        float currentSavings = lastCurrentSavings - expiredTransaction.getAmount();
 
-        // Calculate the difference between current and last savings
-        float savingsDifference = currentSavings - lastCurrentSavings;
-
-        // Update the savings text view with the updated current savings
-        updateSavingsTextView(currentSavings);
-
-        // Remove the transaction from the recent transactions list
         recentTransactions.remove(expiredTransaction);
         saveRecentTransactionsToSharedPreferences();
         updateRecentTransactionsTextView();
 
+        // Update the savings text view with the updated current savings
+        updateSavingsTextView(currentSavings);
+
+        // Check the difference in savings and update the indicator
+        String indicator;
+        if (currentSavings > lastCurrentSavings) {
+            indicator = "increased";
+        } else if (currentSavings < lastCurrentSavings) {
+            indicator = "decreased";
+        } else {
+            indicator = "remained the same";
+        }
+
         // Update the savings value in SharedPreferences
         savingsSharedPreferences.edit().putFloat(SAVINGS_KEY, currentSavings).apply();
 
-        // Display decrease in savings
-        displaySavingsChangeIndicator(savingsDifference);
+        // Update the savings change indicator text view
+        savingsChangeIndicatorTextView.setText("Savings " + indicator);
+        savingsChangeIndicatorTextView.setVisibility(View.VISIBLE);
     }
+
+
 
     // Method to retain the expired transaction as savings
     private void retainTransaction(Transaction transaction) {
@@ -266,22 +274,7 @@ public class HomeFragment extends Fragment {
 
         // Extend expiration date for one week and save changes to SharedPreferences
         extendAndSaveRetainedSavings();
-
-        // Display increase in savings
-        displaySavingsChangeIndicator(transaction.getAmount());
     }
-
-    private void displaySavingsChangeIndicator(float amount) {
-        NumberFormat pesoFormat = NumberFormat.getCurrencyInstance(new Locale("en", "PH"));
-        String changeIndicatorText;
-        if (amount >= 0) {
-            changeIndicatorText = "+ INCREASE " + pesoFormat.format(amount);
-        } else {
-            changeIndicatorText = "- DECREASE " + pesoFormat.format(-amount);
-        }
-        savingsChangeIndicatorTextView.setText(changeIndicatorText);
-    }
-
 
     private void extendAndSaveRetainedSavings() {
         for (Transaction transaction : retainedSavingsList) {
@@ -306,20 +299,8 @@ public class HomeFragment extends Fragment {
             retainedSavingsText.append(transactionLine);
         }
 
-        // Add retained savings as a new transaction
-        float totalRetainedSavings = 0;
-        for (Transaction transaction : retainedSavingsList) {
-            totalRetainedSavings += transaction.getAmount();
-        }
-        Transaction retainedSavingsTransaction = new Transaction("Retained Savings", totalRetainedSavings, "", "", "", ""); // Note: Empty string added for the note parameter
-        recentTransactions.add(retainedSavingsTransaction);
-
-        // Update the recent transactions TextView
-        updateRecentTransactionsTextView();
-
         retainedSavingsTextView.setText(retainedSavingsText.toString());
     }
-
 
     private void updateRecentTransactionsTextView() {
         StringBuilder transactionText = new StringBuilder();
@@ -383,7 +364,7 @@ public class HomeFragment extends Fragment {
 
     private float getLastSavings() {
         // Retrieve the last savings value from SharedPreferences
-        return 0;
+        return savingsSharedPreferences.getFloat(SAVINGS_KEY, 0);
     }
 
 
