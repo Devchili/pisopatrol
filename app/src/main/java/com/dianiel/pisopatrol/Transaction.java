@@ -14,6 +14,8 @@ public class Transaction {
 
     private boolean isRetainedSavings;
 
+    private Date timestamp;
+
     // Constructor
     public Transaction(String title, float amount, String note, String category, String dateDuration, String type) {
         this.title = title;
@@ -22,9 +24,18 @@ public class Transaction {
         this.category = category;
         this.dateDuration = dateDuration;
         this.type = type;
-        this.date = Calendar.getInstance(); // Initialize date with the current time
+        this.date = Calendar.getInstance();
+        this.timestamp = new Date();
+
     }
 
+    public Date getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(Date timestamp) {
+        this.timestamp = timestamp;
+    }
     // Getters and setters
     public String getTitle() {
         return title;

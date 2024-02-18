@@ -48,45 +48,45 @@
     </androidx.cardview.widget.CardView>
 
     <!-- Linear Layout for Filter Spinner, Total Transactions, and RecyclerView -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:layout_below="@id/card_view_transactions"
-        android:orientation="vertical"
-        android:paddingStart="31dp"
-        android:paddingEnd="36dp"
-        android:paddingBottom="72dp"
-        android:background="#4AC0DE"
-        android:layout_marginTop="1dp"
-        app:cardCornerRadius="20dp">
-
-        <!-- Filter Spinner -->
-        <Spinner
-            android:id="@+id/filter_spinner"
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:layout_width="372dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp" />
+            android:layout_below="@id/card_view_transactions"
+            android:layout_marginTop="1dp"
+            android:background="#4AC0DE"
+            android:orientation="vertical"
+            android:paddingStart="31dp"
+            android:paddingEnd="36dp"
+            android:paddingBottom="72dp"
+            app:cardCornerRadius="20dp">
 
-        <!-- Total Transactions TextView -->
-        <TextView
-            android:id="@+id/text_total_transactions"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="8dp"
-            android:text="Total Transactions: 0"
-            android:textColor="@color/white"
-            android:textSize="16sp" />
+            <!-- Filter Spinner -->
+            <Spinner
+                android:id="@+id/filter_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp" />
 
-        <!-- RecyclerView for Transactions -->
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_view_transactions"
-            android:layout_width="match_parent"
-            android:layout_height="208dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp" />
+            <!-- Total Transactions TextView -->
+            <TextView
+                android:id="@+id/text_total_transactions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="Total Transactions: 0"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
 
-    </LinearLayout>
+            <!-- RecyclerView for Transactions -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view_transactions"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp" />
+
+        </LinearLayout>
 
     </RelativeLayout>
 

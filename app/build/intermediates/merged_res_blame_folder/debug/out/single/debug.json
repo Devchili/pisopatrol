@@ -1,182 +1,174 @@
 [
     {
-        "merged": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-merged_res-31:/drawable_info.xml.flat",
-        "source": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-main-33:/drawable/info.xml"
+        "merged": "com.dianiel.pisopatrol.app-merged_res-31:/drawable_coin.png.flat",
+        "source": "com.dianiel.pisopatrol.app-main-33:/drawable/coin.png"
     },
     {
-        "merged": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-merged_res-31:/drawable_ic_arrow_up.xml.flat",
-        "source": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-main-33:/drawable/ic_arrow_up.xml"
+        "merged": "com.dianiel.pisopatrol.app-merged_res-31:/mipmap-xxhdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.dianiel.pisopatrol.app-main-33:/mipmap-xxhdpi/ic_launcher_foreground.webp"
     },
     {
-        "merged": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-merged_res-31:/mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-main-33:/mipmap-xxhdpi/ic_launcher.webp"
+        "merged": "com.dianiel.pisopatrol.app-merged_res-31:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.dianiel.pisopatrol.app-main-33:/mipmap-anydpi-v26/ic_launcher_round.xml"
     },
     {
-        "merged": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-merged_res-31:/layout_activity_about.xml.flat",
-        "source": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-main-33:/layout/activity_about.xml"
+        "merged": "com.dianiel.pisopatrol.app-merged_res-31:/drawable_dropdown.xml.flat",
+        "source": "com.dianiel.pisopatrol.app-main-33:/drawable/dropdown.xml"
     },
     {
-        "merged": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-merged_res-31:/layout_item_transaction.xml.flat",
-        "source": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-main-33:/layout/item_transaction.xml"
+        "merged": "com.dianiel.pisopatrol.app-merged_res-31:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.dianiel.pisopatrol.app-main-33:/drawable/ic_launcher_foreground.xml"
     },
     {
-        "merged": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-merged_res-31:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
-        "source": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-main-33:/mipmap-xxxhdpi/ic_launcher_round.webp"
+        "merged": "com.dianiel.pisopatrol.app-merged_res-31:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.dianiel.pisopatrol.app-main-33:/mipmap-anydpi-v26/ic_launcher.xml"
     },
     {
-        "merged": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-merged_res-31:/xml_data_extraction_rules.xml.flat",
-        "source": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-main-33:/xml/data_extraction_rules.xml"
+        "merged": "com.dianiel.pisopatrol.app-merged_res-31:/xml_backup_rules.xml.flat",
+        "source": "com.dianiel.pisopatrol.app-main-33:/xml/backup_rules.xml"
     },
     {
-        "merged": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-merged_res-31:/drawable_black.png.flat",
-        "source": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-main-33:/drawable/black.png"
+        "merged": "com.dianiel.pisopatrol.app-merged_res-31:/drawable_about.png.flat",
+        "source": "com.dianiel.pisopatrol.app-main-33:/drawable/about.png"
     },
     {
-        "merged": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-merged_res-31:/drawable_about.png.flat",
-        "source": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-main-33:/drawable/about.png"
+        "merged": "com.dianiel.pisopatrol.app-merged_res-31:/drawable_info.xml.flat",
+        "source": "com.dianiel.pisopatrol.app-main-33:/drawable/info.xml"
     },
     {
-        "merged": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-merged_res-31:/mipmap-mdpi_ic_launcher_round.webp.flat",
-        "source": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-main-33:/mipmap-mdpi/ic_launcher_round.webp"
+        "merged": "com.dianiel.pisopatrol.app-merged_res-31:/layout_activity_about.xml.flat",
+        "source": "com.dianiel.pisopatrol.app-main-33:/layout/activity_about.xml"
     },
     {
-        "merged": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-merged_res-31:/drawable_savings.png.flat",
-        "source": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-main-33:/drawable/savings.png"
+        "merged": "com.dianiel.pisopatrol.app-merged_res-31:/drawable_savings.png.flat",
+        "source": "com.dianiel.pisopatrol.app-main-33:/drawable/savings.png"
     },
     {
-        "merged": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-merged_res-31:/menu_bottom_navigation_menu.xml.flat",
-        "source": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-main-33:/menu/bottom_navigation_menu.xml"
+        "merged": "com.dianiel.pisopatrol.app-merged_res-31:/xml_data_extraction_rules.xml.flat",
+        "source": "com.dianiel.pisopatrol.app-main-33:/xml/data_extraction_rules.xml"
     },
     {
-        "merged": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-merged_res-31:/mipmap-xhdpi_ic_launcher.webp.flat",
-        "source": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-main-33:/mipmap-xhdpi/ic_launcher.webp"
+        "merged": "com.dianiel.pisopatrol.app-merged_res-31:/mipmap-xxxhdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.dianiel.pisopatrol.app-main-33:/mipmap-xxxhdpi/ic_launcher_foreground.webp"
     },
     {
-        "merged": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-merged_res-31:/mipmap-xxhdpi_ic_launcher_foreground.webp.flat",
-        "source": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-main-33:/mipmap-xxhdpi/ic_launcher_foreground.webp"
+        "merged": "com.dianiel.pisopatrol.app-merged_res-31:/drawable_transact.png.flat",
+        "source": "com.dianiel.pisopatrol.app-main-33:/drawable/transact.png"
     },
     {
-        "merged": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-merged_res-31:/layout_transaction_item.xml.flat",
-        "source": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-main-33:/layout/transaction_item.xml"
+        "merged": "com.dianiel.pisopatrol.app-merged_res-31:/layout_transaction_item.xml.flat",
+        "source": "com.dianiel.pisopatrol.app-main-33:/layout/transaction_item.xml"
     },
     {
-        "merged": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-merged_res-31:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
-        "source": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-main-33:/mipmap-xxhdpi/ic_launcher_round.webp"
+        "merged": "com.dianiel.pisopatrol.app-merged_res-31:/drawable_status.png.flat",
+        "source": "com.dianiel.pisopatrol.app-main-33:/drawable/status.png"
     },
     {
-        "merged": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-merged_res-31:/drawable_dropdown.xml.flat",
-        "source": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-main-33:/drawable/dropdown.xml"
+        "merged": "com.dianiel.pisopatrol.app-merged_res-31:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.dianiel.pisopatrol.app-main-33:/drawable/ic_launcher_background.xml"
     },
     {
-        "merged": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-merged_res-31:/drawable_coin.png.flat",
-        "source": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-main-33:/drawable/coin.png"
+        "merged": "com.dianiel.pisopatrol.app-merged_res-31:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "com.dianiel.pisopatrol.app-main-33:/mipmap-xhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-merged_res-31:/mipmap-hdpi_ic_launcher_round.webp.flat",
-        "source": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-main-33:/mipmap-hdpi/ic_launcher_round.webp"
+        "merged": "com.dianiel.pisopatrol.app-merged_res-31:/mipmap-mdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.dianiel.pisopatrol.app-main-33:/mipmap-mdpi/ic_launcher_foreground.webp"
     },
     {
-        "merged": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-merged_res-31:/drawable_add.png.flat",
-        "source": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-main-33:/drawable/add.png"
+        "merged": "com.dianiel.pisopatrol.app-merged_res-31:/drawable_add.png.flat",
+        "source": "com.dianiel.pisopatrol.app-main-33:/drawable/add.png"
     },
     {
-        "merged": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-merged_res-31:/layout_activity_main.xml.flat",
-        "source": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-main-33:/layout/activity_main.xml"
+        "merged": "com.dianiel.pisopatrol.app-merged_res-31:/layout_item_transaction.xml.flat",
+        "source": "com.dianiel.pisopatrol.app-main-33:/layout/item_transaction.xml"
+    },
+    {
+        "merged": "com.dianiel.pisopatrol.app-merged_res-31:/mipmap-hdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.dianiel.pisopatrol.app-main-33:/mipmap-hdpi/ic_launcher_foreground.webp"
     },
     {
         "merged": "com.dianiel.pisopatrol.app-merged_res-31:/layout_fragment_home.xml.flat",
         "source": "com.dianiel.pisopatrol.app-main-33:/layout/fragment_home.xml"
     },
     {
-        "merged": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-merged_res-31:/drawable_status.png.flat",
-        "source": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-main-33:/drawable/status.png"
+        "merged": "com.dianiel.pisopatrol.app-merged_res-31:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "com.dianiel.pisopatrol.app-main-33:/mipmap-xxxhdpi/ic_launcher.webp"
     },
     {
-        "merged": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-merged_res-31:/layout_fragment_home.xml.flat",
-        "source": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-main-33:/layout/fragment_home.xml"
+        "merged": "com.dianiel.pisopatrol.app-merged_res-31:/mipmap-xhdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.dianiel.pisopatrol.app-main-33:/mipmap-xhdpi/ic_launcher_foreground.webp"
     },
     {
-        "merged": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-merged_res-31:/drawable_pisopatrol.png.flat",
-        "source": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-main-33:/drawable/pisopatrol.png"
+        "merged": "com.dianiel.pisopatrol.app-merged_res-31:/drawable_ic_arrow_up.xml.flat",
+        "source": "com.dianiel.pisopatrol.app-main-33:/drawable/ic_arrow_up.xml"
     },
     {
-        "merged": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-merged_res-31:/layout_savings_history_card.xml.flat",
-        "source": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-main-33:/layout/savings_history_card.xml"
+        "merged": "com.dianiel.pisopatrol.app-merged_res-31:/drawable_pisopatrol.png.flat",
+        "source": "com.dianiel.pisopatrol.app-main-33:/drawable/pisopatrol.png"
     },
     {
-        "merged": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-merged_res-31:/mipmap-xxxhdpi_ic_launcher.webp.flat",
-        "source": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-main-33:/mipmap-xxxhdpi/ic_launcher.webp"
+        "merged": "com.dianiel.pisopatrol.app-merged_res-31:/menu_bottom_navigation_menu.xml.flat",
+        "source": "com.dianiel.pisopatrol.app-main-33:/menu/bottom_navigation_menu.xml"
     },
     {
-        "merged": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-merged_res-31:/drawable_ic_launcher_background.xml.flat",
-        "source": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-main-33:/drawable/ic_launcher_background.xml"
+        "merged": "com.dianiel.pisopatrol.app-merged_res-31:/drawable_black.png.flat",
+        "source": "com.dianiel.pisopatrol.app-main-33:/drawable/black.png"
     },
     {
-        "merged": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-merged_res-31:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-main-33:/mipmap-anydpi-v26/ic_launcher_round.xml"
+        "merged": "com.dianiel.pisopatrol.app-merged_res-31:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "com.dianiel.pisopatrol.app-main-33:/mipmap-mdpi/ic_launcher.webp"
     },
     {
-        "merged": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-merged_res-31:/mipmap-xhdpi_ic_launcher_foreground.webp.flat",
-        "source": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-main-33:/mipmap-xhdpi/ic_launcher_foreground.webp"
+        "merged": "com.dianiel.pisopatrol.app-merged_res-31:/layout_activity_main.xml.flat",
+        "source": "com.dianiel.pisopatrol.app-main-33:/layout/activity_main.xml"
     },
     {
-        "merged": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-merged_res-31:/mipmap-hdpi_ic_launcher.webp.flat",
-        "source": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-main-33:/mipmap-hdpi/ic_launcher.webp"
+        "merged": "com.dianiel.pisopatrol.app-merged_res-31:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.dianiel.pisopatrol.app-main-33:/mipmap-xxhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-merged_res-31:/mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-main-33:/mipmap-mdpi/ic_launcher.webp"
+        "merged": "com.dianiel.pisopatrol.app-merged_res-31:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "com.dianiel.pisopatrol.app-main-33:/mipmap-xhdpi/ic_launcher.webp"
     },
     {
-        "merged": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-merged_res-31:/layout_fragment_add_transaction.xml.flat",
-        "source": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-main-33:/layout/fragment_add_transaction.xml"
+        "merged": "com.dianiel.pisopatrol.app-merged_res-31:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "com.dianiel.pisopatrol.app-main-33:/mipmap-hdpi/ic_launcher.webp"
     },
     {
-        "merged": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-merged_res-31:/mipmap-mdpi_ic_launcher_foreground.webp.flat",
-        "source": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-main-33:/mipmap-mdpi/ic_launcher_foreground.webp"
+        "merged": "com.dianiel.pisopatrol.app-merged_res-31:/layout_fragment_transactions.xml.flat",
+        "source": "com.dianiel.pisopatrol.app-main-33:/layout/fragment_transactions.xml"
     },
     {
-        "merged": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-merged_res-31:/mipmap-hdpi_ic_launcher_foreground.webp.flat",
-        "source": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-main-33:/mipmap-hdpi/ic_launcher_foreground.webp"
+        "merged": "com.dianiel.pisopatrol.app-merged_res-31:/menu_menu_home.xml.flat",
+        "source": "com.dianiel.pisopatrol.app-main-33:/menu/menu_home.xml"
     },
     {
-        "merged": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-merged_res-31:/xml_backup_rules.xml.flat",
-        "source": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-main-33:/xml/backup_rules.xml"
+        "merged": "com.dianiel.pisopatrol.app-merged_res-31:/drawable_reset.png.flat",
+        "source": "com.dianiel.pisopatrol.app-main-33:/drawable/reset.png"
     },
     {
-        "merged": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-merged_res-31:/mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-main-33:/mipmap-xhdpi/ic_launcher_round.webp"
+        "merged": "com.dianiel.pisopatrol.app-merged_res-31:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.dianiel.pisopatrol.app-main-33:/mipmap-xxxhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-merged_res-31:/drawable_reset.png.flat",
-        "source": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-main-33:/drawable/reset.png"
+        "merged": "com.dianiel.pisopatrol.app-merged_res-31:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "com.dianiel.pisopatrol.app-main-33:/mipmap-mdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-merged_res-31:/layout_fragment_transactions.xml.flat",
-        "source": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-main-33:/layout/fragment_transactions.xml"
+        "merged": "com.dianiel.pisopatrol.app-merged_res-31:/drawable_home.png.flat",
+        "source": "com.dianiel.pisopatrol.app-main-33:/drawable/home.png"
     },
     {
-        "merged": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-merged_res-31:/menu_menu_home.xml.flat",
-        "source": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-main-33:/menu/menu_home.xml"
+        "merged": "com.dianiel.pisopatrol.app-merged_res-31:/layout_fragment_add_transaction.xml.flat",
+        "source": "com.dianiel.pisopatrol.app-main-33:/layout/fragment_add_transaction.xml"
     },
     {
-        "merged": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-merged_res-31:/drawable_ic_launcher_foreground.xml.flat",
-        "source": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-main-33:/drawable/ic_launcher_foreground.xml"
+        "merged": "com.dianiel.pisopatrol.app-merged_res-31:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "com.dianiel.pisopatrol.app-main-33:/mipmap-xxhdpi/ic_launcher.webp"
     },
     {
-        "merged": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-merged_res-31:/mipmap-xxxhdpi_ic_launcher_foreground.webp.flat",
-        "source": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-main-33:/mipmap-xxxhdpi/ic_launcher_foreground.webp"
-    },
-    {
-        "merged": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-merged_res-31:/drawable_home.png.flat",
-        "source": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-main-33:/drawable/home.png"
-    },
-    {
-        "merged": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-merged_res-31:/drawable_transact.png.flat",
-        "source": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-main-33:/drawable/transact.png"
-    },
-    {
-        "merged": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-merged_res-31:/mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-main-33:/mipmap-anydpi-v26/ic_launcher.xml"
+        "merged": "com.dianiel.pisopatrol.app-merged_res-31:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "com.dianiel.pisopatrol.app-main-33:/mipmap-hdpi/ic_launcher_round.webp"
     }
 ]

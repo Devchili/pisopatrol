@@ -3188,12 +3188,10 @@ id bounceEnd
 id bounceStart
 id buttonPanel
 id button_add_transaction
-id button_save
 id cache_measures
 id callMeasure
 id cancel_button
 id card_view_recent_transactions
-id card_view_retained_savings
 id card_view_saving_status
 id card_view_savings
 id card_view_savings_trend
@@ -3479,7 +3477,6 @@ id rounded
 id row_index_key
 id save_non_transition_alpha
 id save_overlay_view
-id savings_history_layout
 id sawtooth
 id scale
 id screen
@@ -3568,16 +3565,15 @@ id text_input_start_icon
 id text_total_transactions
 id text_view_amount
 id text_view_category
+id text_view_date
 id text_view_date_duration
 id text_view_duration
 id text_view_note
 id text_view_recent_transactions
-id text_view_reset
 id text_view_retained_savings
 id text_view_saving_status
 id text_view_savings
 id text_view_savings_change_indicator
-id text_view_savings_trend
 id text_view_title
 id text_view_transaction_type
 id text_view_type
@@ -3592,7 +3588,6 @@ id title
 id titleDividerNoCustom
 id title_template
 id toggle
-id toolbar
 id top
 id topPanel
 id touch_outside
@@ -3820,7 +3815,6 @@ layout notification_template_custom_big
 layout notification_template_icon_group
 layout notification_template_part_chronometer
 layout notification_template_part_time
-layout savings_history_card
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material

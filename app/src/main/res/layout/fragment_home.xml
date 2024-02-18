@@ -24,40 +24,7 @@
             android:layout_marginTop="1dp"
             android:layout_centerHorizontal="true">
 
-            <ImageView
-                android:id="@+id/image_view_title"
-                android:layout_width="150dp"
-                android:layout_height="40dp"
-                android:layout_centerHorizontal="true"
-                android:layout_gravity="center"
-                android:adjustViewBounds="true"
-                android:scaleType="fitXY"
-                android:src="@drawable/pisopatrol" />
-
             <!-- Add a Toolbar for the dropdown menu -->
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                android:layout_gravity="top"
-                android:layout_marginTop="8dp"
-                android:background="@android:color/transparent"
-                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-                app:title="">
-
-                <!-- Define the dropdown menu icon -->
-                <ImageView
-                    android:id="@+id/dropdown_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/dropdown"
-                    android:layout_gravity="end"
-                    android:layout_marginEnd="16dp"
-                    android:contentDescription="Dropdown Menu" />
-
-
-            </androidx.appcompat.widget.Toolbar>
 
         </FrameLayout>
 
@@ -143,7 +110,7 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
+                    android:layout_height="300dp"
                     android:orientation="vertical"
                     android:background="@color/white"
                     android:backgroundTint="#49BFDC"
@@ -161,12 +128,12 @@
                         android:id="@+id/text_view_recent_transactions"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="12sp"
+                        android:textSize="15sp"
                         android:textStyle="bold" />
 
                     <androidx.core.widget.NestedScrollView
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:minHeight="200dp"
                         android:background="#4AC0DE">
 
@@ -174,7 +141,7 @@
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/recycler_view_transactions"
                         android:layout_width="match_parent"
-                        android:layout_height="137dp" />
+                        android:layout_height="match_parent" />
 
             </androidx.core.widget.NestedScrollView>
 
@@ -184,33 +151,13 @@
 
         </androidx.cardview.widget.CardView>
 
-        <!-- Card for Retained Savings -->
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card_view_retained_savings"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/card_view_recent_transactions"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
-            app:cardCornerRadius="8dp">
-
-
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="80dp"
                 android:background="#1EB9B4"
                 android:orientation="vertical"
                 android:padding="0dp">
 
-                <TextView
-                    android:id="@+id/text_view_savings_change_indicator"
-                    android:layout_width="300dp"
-                    android:layout_height="47dp"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:textColor="@android:color/black"
-                    android:textSize="16sp"
-                    android:visibility="visible" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -226,14 +173,51 @@
                     android:layout_height="wrap_content"
                     android:textColor="@android:color/white"
                     android:textSize="1sp"
-                    android:visibility="invisible" />
+                    android:visibility="visible" />
 
             </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="#1EB9B4"
+            android:orientation="horizontal"
+            android:padding="16dp">
+
+            <!-- ImageView for Pisopatrol logo -->
+            <ImageView
+                android:id="@+id/image_view_title"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/pisopatrol" />
+
+            <!-- ImageView for dropdown menu -->
+            <ImageView
+                android:id="@+id/dropdown_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/dropdown"
+                android:layout_marginEnd="0dp" />
+
+        </LinearLayout>
 
 
+        <TextView
+            android:id="@+id/text_view_savings_change_indicator"
+            android:layout_width="300dp"
+            android:layout_height="47dp"
+            android:layout_below="@+id/card_view_recent_transactions"
+            android:layout_gravity="center"
+            android:layout_marginTop="23dp"
+            android:gravity="center"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:visibility="visible" />
 
-        </androidx.cardview.widget.CardView>
 
     </RelativeLayout>
 

@@ -1,5 +1,6 @@
 package com.dianiel.pisopatrol;
 
+import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -7,6 +8,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import java.text.NumberFormat;
+import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Locale;
 
@@ -47,6 +49,7 @@ public class TransactionAdapter extends RecyclerView.Adapter<TransactionAdapter.
         TextView noteTextView;
         TextView categoryTextView;
         TextView durationTextView;
+        TextView dateTextView;
 
         public TransactionViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -56,8 +59,10 @@ public class TransactionAdapter extends RecyclerView.Adapter<TransactionAdapter.
             noteTextView = itemView.findViewById(R.id.text_view_note);
             categoryTextView = itemView.findViewById(R.id.text_view_category);
             durationTextView = itemView.findViewById(R.id.text_view_duration);
+            dateTextView = itemView.findViewById(R.id.text_view_date);
         }
 
+        @SuppressLint("SetTextI18n")
         public void bind(Transaction transaction) {
             // Format for Peso currency
             NumberFormat pesoFormat = NumberFormat.getCurrencyInstance(new Locale("en", "PH"));
@@ -67,6 +72,11 @@ public class TransactionAdapter extends RecyclerView.Adapter<TransactionAdapter.
             typeTextView.setText(transaction.getType());
             noteTextView.setText("Note: " + transaction.getNote());
             durationTextView.setText("Date Duration: " + transaction.getDateDuration());
+
+            // Format timestamp using SimpleDateFormat
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
+            String formattedDate = dateFormat.format(transaction.getTimestamp());
+            dateTextView.setText("Timestamp: " + formattedDate);
 
             // Check if the transaction type is "Allowance"
             if (!transaction.getType().equals("Allowance")) {

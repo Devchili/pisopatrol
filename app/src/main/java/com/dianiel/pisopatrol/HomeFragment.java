@@ -1,25 +1,18 @@
 package com.dianiel.pisopatrol;
 
-import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.text.Spannable;
-import android.text.SpannableString;
-import android.text.style.AbsoluteSizeSpan;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.PopupMenu;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,12 +26,13 @@ import java.lang.reflect.Type;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Locale;
 
 public class HomeFragment extends Fragment {
-
+//final
     private static final String TRANSACTION_PREFERENCES = "transaction_prefs";
     private static final String TRANSACTION_LIST_KEY = "transaction_list";
     private static final String SAVINGS_PREFERENCES = "savings_prefs";
@@ -90,10 +84,14 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        // Determine if the last transaction was an expense
+        boolean isLastTransactionExpense = getLastTransactionType().equals("Expense");
+
+        // Display increase or decrease in savings accordingly
+        displaySavingsChangeIndicator(isLastTransactionExpense);
+
         return view;
     }
-
-
 
     private void showDropdownMenu(View v) {
         PopupMenu popupMenu = new PopupMenu(requireContext(), v);
@@ -122,7 +120,6 @@ public class HomeFragment extends Fragment {
         startActivity(intent);
     }
 
-
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         inflater.inflate(R.menu.menu_home, menu);
@@ -136,7 +133,6 @@ public class HomeFragment extends Fragment {
         }
         super.onCreateOptionsMenu(menu, inflater);
     }
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -197,15 +193,19 @@ public class HomeFragment extends Fragment {
 
         for (Transaction transaction : recentTransactions) {
             if (!processedExpiredTransactions.contains(transaction) && transaction.getType().equals("Allowance")) {
-                long transactionMillis = transaction.getDate().getTimeInMillis();
-                long durationMillis = getDurationInMillis(transaction.getDateDuration());
+                Calendar transactionDate = transaction.getDate();
+                if (transactionDate != null) { // Check if transaction date is not null
+                    long transactionMillis = transactionDate.getTimeInMillis();
+                    long durationMillis = getDurationInMillis(transaction.getDateDuration());
 
-                if (currentMillis >= transactionMillis + durationMillis) {
-                    showAllowanceTransactionExpiredDialog(transaction);
+                    if (currentMillis >= transactionMillis + durationMillis) {
+                        showAllowanceTransactionExpiredDialog(transaction);
+                    }
                 }
             }
         }
     }
+
 
     private void showAllowanceTransactionExpiredDialog(final Transaction expiredTransaction) {
         AlertDialog.Builder builder = new AlertDialog.Builder(requireContext());
@@ -250,7 +250,6 @@ public class HomeFragment extends Fragment {
         savingsSharedPreferences.edit().putFloat(SAVINGS_KEY, currentSavings).apply();
 
         // Display decrease in savings
-        displaySavingsChangeIndicator(savingsDifference);
     }
 
     // Method to retain the expired transaction as savings
@@ -261,27 +260,46 @@ public class HomeFragment extends Fragment {
         transaction.setDate(newExpirationDate);
 
         processedExpiredTransactions.remove(transaction); // Remove from expired list since it's being retained
-        retainedSavingsList.add(transaction);
-        displayRetainedSavingsList();
+
+        // Add the current savings as a new transaction with 1 week duration
+        Date timestamp = new Date();
+        float currentSavings = savingsSharedPreferences.getFloat(SAVINGS_KEY, 0);
+        Transaction newTransaction = new Transaction("Retained Savings", currentSavings, "Savings", "1 week", "", "");
+        recentTransactions.add(newTransaction);
+
+        // Update the recent transactions TextView
+        updateRecentTransactionsTextView();
 
         // Extend expiration date for one week and save changes to SharedPreferences
         extendAndSaveRetainedSavings();
 
-        // Display increase in savings
-        displaySavingsChangeIndicator(transaction.getAmount());
+        // Determine if the last transaction was an expense
+        boolean isLastTransactionExpense = getLastTransactionType().equals("Expense");
+
+        // Display increase or decrease in savings accordingly
+        displaySavingsChangeIndicator(isLastTransactionExpense);
     }
 
-    private void displaySavingsChangeIndicator(float amount) {
+    private String getLastTransactionType() {
+        if (recentTransactions.isEmpty()) {
+            return ""; // Return empty string if there are no transactions
+        } else {
+            return recentTransactions.get(recentTransactions.size() - 1).getType();
+        }
+    }
+
+    private void displaySavingsChangeIndicator(boolean isLastTransactionExpense) {
         NumberFormat pesoFormat = NumberFormat.getCurrencyInstance(new Locale("en", "PH"));
         String changeIndicatorText;
-        if (amount >= 0) {
-            changeIndicatorText = "+ INCREASE " + pesoFormat.format(amount);
+
+        if (isLastTransactionExpense) {
+            changeIndicatorText = "- Decrease ";
         } else {
-            changeIndicatorText = "- DECREASE " + pesoFormat.format(-amount);
+            changeIndicatorText = "+ Increase ";
         }
+
         savingsChangeIndicatorTextView.setText(changeIndicatorText);
     }
-
 
     private void extendAndSaveRetainedSavings() {
         for (Transaction transaction : retainedSavingsList) {
@@ -295,8 +313,6 @@ public class HomeFragment extends Fragment {
         saveRecentTransactionsToSharedPreferences();
     }
 
-
-
     private void displayRetainedSavingsList() {
         StringBuilder retainedSavingsText = new StringBuilder();
         NumberFormat pesoFormat = NumberFormat.getCurrencyInstance(new Locale("en", "PH"));
@@ -306,31 +322,31 @@ public class HomeFragment extends Fragment {
             retainedSavingsText.append(transactionLine);
         }
 
-        // Add retained savings as a new transaction
-        float totalRetainedSavings = 0;
-        for (Transaction transaction : retainedSavingsList) {
-            totalRetainedSavings += transaction.getAmount();
-        }
-        Transaction retainedSavingsTransaction = new Transaction("Retained Savings", totalRetainedSavings, "", "", "", ""); // Note: Empty string added for the note parameter
-        recentTransactions.add(retainedSavingsTransaction);
-
         // Update the recent transactions TextView
         updateRecentTransactionsTextView();
 
         retainedSavingsTextView.setText(retainedSavingsText.toString());
     }
 
-
     private void updateRecentTransactionsTextView() {
         StringBuilder transactionText = new StringBuilder();
         NumberFormat pesoFormat = NumberFormat.getCurrencyInstance(new Locale("en", "PH"));
 
-        for (Transaction transaction : recentTransactions) {
+        // Iterate through recent transactions
+        for (int i = 0; i < recentTransactions.size(); i++) {
+            Transaction transaction = recentTransactions.get(i);
             String transactionLine;
-            if (transaction.getType().equals("Allowance")) {
-                transactionLine = String.format("%s: %s - %s (%s)\n", transaction.getTitle(), pesoFormat.format(transaction.getAmount()), transaction.getType(), transaction.getDateDuration(), transaction.getNote());
+            // Check if it's the last transaction
+            if (i == recentTransactions.size() - 1) {
+                // Display title, amount, and type for the last transaction
+                transactionLine = String.format("%s: %s - %s\n", transaction.getTitle(), pesoFormat.format(transaction.getAmount()), transaction.getType());
             } else {
-                transactionLine = String.format("%s: %s - %s (%s)\n", transaction.getTitle(), pesoFormat.format(transaction.getAmount()), transaction.getType(), transaction.getCategory(), transaction.getDateDuration(), transaction.getNote());
+                // For other transactions, display full details
+                if (transaction.getType().equals("Allowance")) {
+                    transactionLine = String.format("%s: %s - %s (%s)\n", transaction.getTitle(), pesoFormat.format(transaction.getAmount()), transaction.getType(), transaction.getDateDuration(), transaction.getNote());
+                } else {
+                    transactionLine = String.format("%s: %s - %s (%s)\n", transaction.getTitle(), pesoFormat.format(transaction.getAmount()), transaction.getType(), transaction.getCategory(), transaction.getDateDuration(), transaction.getNote());
+                }
             }
             transactionText.append(transactionLine);
         }
@@ -385,8 +401,6 @@ public class HomeFragment extends Fragment {
         // Retrieve the last savings value from SharedPreferences
         return 0;
     }
-
-
 
     private long getDurationInMillis(String duration) {
         String[] parts = duration.split(" ");

@@ -166,20 +166,23 @@
         android:layout_marginTop="3dp"
         android:visibility="gone"/>
 
+
         <Button
             android:id="@+id/button_add_transaction"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/spinner_date_duration"
+            android:layout_below="@+id/edit_text_note"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginStart="72dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="62dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="60dp"
             android:backgroundTint="#185DB3"
             android:shadowRadius="@integer/material_motion_duration_long_1"
             android:text="Add Transaction"
             android:textColor="@color/white" />
+
 
     </RelativeLayout>
 </androidx.cardview.widget.CardView>
