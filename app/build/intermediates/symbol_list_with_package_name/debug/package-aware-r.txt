@@ -3078,6 +3078,8 @@ drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable pisopatrol
 drawable reset
+drawable rounded_background
+drawable rounded_background2
 drawable savings
 drawable status
 drawable test_level_drawable

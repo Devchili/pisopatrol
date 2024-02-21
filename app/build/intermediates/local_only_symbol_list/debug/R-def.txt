@@ -16,6 +16,8 @@ drawable ic_launcher_foreground
 drawable info
 drawable pisopatrol
 drawable reset
+drawable rounded_background
+drawable rounded_background2
 drawable savings
 drawable status
 drawable transact

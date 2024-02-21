@@ -33,6 +33,7 @@ import java.util.Locale;
 
 public class HomeFragment extends Fragment {
 //final
+    //final1
     private static final String TRANSACTION_PREFERENCES = "transaction_prefs";
     private static final String TRANSACTION_LIST_KEY = "transaction_list";
     private static final String SAVINGS_PREFERENCES = "savings_prefs";
@@ -295,7 +296,15 @@ public class HomeFragment extends Fragment {
         if (isLastTransactionExpense) {
             changeIndicatorText = "- Decrease ";
         } else {
-            changeIndicatorText = "+ Increase ";
+            // Retrieve the amount of the last transaction
+            float lastTransactionAmount = recentTransactions.isEmpty() ? 0 : recentTransactions.get(recentTransactions.size() - 1).getAmount();
+
+            // Check if the last transaction amount is zero or positive
+            if (lastTransactionAmount <= 0) {
+                changeIndicatorText = "- Decrease ";
+            } else {
+                changeIndicatorText = "+ Increase ";
+            }
         }
 
         savingsChangeIndicatorTextView.setText(changeIndicatorText);
@@ -369,24 +378,26 @@ public class HomeFragment extends Fragment {
             }
         }
 
-        String savingStatus;
+        // Calculate the percentage of savings compared to expenses
+        float savingsPercentage = (totalSavings / totalExpenses) * 100;
 
-        if (totalSavings == 0) {
-            savingStatus = "Poor";
-        } else if (totalExpenses > totalSavings) {
-            savingStatus = "Very Poor";
-        } else if (totalSavings > totalExpenses * 2) {
+        // Determine the saving status based on the percentage
+        String savingStatus;
+        if (savingsPercentage >= 50) {
             savingStatus = "Excellent";
-        } else if (totalSavings > totalExpenses) {
+        } else if (savingsPercentage >= 30) {
             savingStatus = "Very Good";
-        } else if (totalSavings >= totalExpenses * 0.5) {
+        } else if (savingsPercentage >= 5) {
             savingStatus = "Good";
-        } else {
+        } else if (savingsPercentage > 0) {
             savingStatus = "Poor";
+        } else {
+            savingStatus = "Very Poor";
         }
 
         savingStatusTextView.setText("Savings status: " + savingStatus);
     }
+
 
     private List<Transaction> getRecentTransactionsFromSharedPreferences() {
         String json = transactionSharedPreferences.getString(TRANSACTION_LIST_KEY, "");

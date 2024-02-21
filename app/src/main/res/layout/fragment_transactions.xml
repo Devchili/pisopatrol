@@ -27,8 +27,8 @@
     <!-- CardView for Transactions -->
     <com.github.mikephil.charting.charts.PieChart
         android:id="@+id/pie_chart"
-        android:layout_width="382dp"
-        android:layout_height="246dp"
+        android:layout_width="350dp"
+        android:layout_height="200dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="70dp"
@@ -64,6 +64,7 @@
             <Spinner
                 android:id="@+id/filter_spinner"
                 android:layout_width="match_parent"
+                android:background="@drawable/rounded_background2"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp" />
@@ -84,7 +85,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp" />
+                android:layout_marginBottom="8dp"
+                android:paddingBottom="20dp"/>
 
         </LinearLayout>
 

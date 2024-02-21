@@ -198,6 +198,4 @@ public class TransactionsFragment extends Fragment {
         pieChart.invalidate();
     }
 
-
-
 }
