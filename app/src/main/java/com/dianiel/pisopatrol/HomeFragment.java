@@ -212,6 +212,10 @@ public class HomeFragment extends Fragment {
                 // Update saving status text view
                 updateSavingStatusTextView(0, 0);
 
+                // Update total allowance and total expense TextViews
+                updateTotalAllowanceTextView();
+                updateTotalExpenseTextView();
+
                 // Notify user
                 Toast.makeText(requireContext(), "Data has been reset.", Toast.LENGTH_SHORT).show();
             }
@@ -224,6 +228,7 @@ public class HomeFragment extends Fragment {
         });
         builder.show();
     }
+
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {

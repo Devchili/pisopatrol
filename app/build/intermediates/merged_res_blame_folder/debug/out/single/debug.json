@@ -8,12 +8,12 @@
         "source": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-main-33:/drawable/ic_arrow_up.xml"
     },
     {
-        "merged": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-merged_res-31:/layout_activity_about.xml.flat",
-        "source": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-main-33:/layout/activity_about.xml"
-    },
-    {
         "merged": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-merged_res-31:/mipmap-xxhdpi_ic_launcher.webp.flat",
         "source": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-main-33:/mipmap-xxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-merged_res-31:/layout_activity_about.xml.flat",
+        "source": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-main-33:/layout/activity_about.xml"
     },
     {
         "merged": "/home/lithium/.gradle/daemon/8.2/com.dianiel.pisopatrol.app-merged_res-31:/layout_item_transaction.xml.flat",
