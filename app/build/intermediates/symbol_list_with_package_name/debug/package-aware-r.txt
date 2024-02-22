@@ -3577,6 +3577,8 @@ id text_view_saving_status
 id text_view_savings
 id text_view_savings_change_indicator
 id text_view_title
+id text_view_total_allowance
+id text_view_total_expense
 id text_view_transaction_type
 id text_view_type
 id textinput_counter

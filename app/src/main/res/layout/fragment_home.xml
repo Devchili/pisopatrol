@@ -58,6 +58,21 @@
                     android:textStyle="bold" />
 
 
+                <TextView
+                    android:id="@+id/text_view_total_allowance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total Allowance: "
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <TextView
+                    android:id="@+id/text_view_total_expense"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total Expense: "
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+
                 <!-- Add additional content for current savings here -->
 
             </LinearLayout>

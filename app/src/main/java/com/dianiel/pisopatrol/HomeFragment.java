@@ -39,6 +39,8 @@ public class HomeFragment extends Fragment {
     private static final String SAVINGS_PREFERENCES = "savings_prefs";
     private static final String SAVINGS_KEY = "savings";
 
+    private TextView totalAllowanceTextView;
+    private TextView totalExpenseTextView;
     private TextView recentTransactionsTextView;
     private TextView savingsTextView;
     private TextView savingStatusTextView;
@@ -55,12 +57,17 @@ public class HomeFragment extends Fragment {
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
+
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         recentTransactionsTextView = view.findViewById(R.id.text_view_recent_transactions);
         savingsTextView = view.findViewById(R.id.text_view_savings);
         savingStatusTextView = view.findViewById(R.id.text_view_saving_status);
         savingsChangeIndicatorTextView = view.findViewById(R.id.text_view_savings_change_indicator);
         retainedSavingsTextView = view.findViewById(R.id.text_view_retained_savings);
+        totalAllowanceTextView = view.findViewById(R.id.text_view_total_allowance);
+        totalExpenseTextView = view.findViewById(R.id.text_view_total_expense);
+
 
         transactionSharedPreferences = requireContext().getSharedPreferences(TRANSACTION_PREFERENCES, Context.MODE_PRIVATE);
         savingsSharedPreferences = requireContext().getSharedPreferences(SAVINGS_PREFERENCES, Context.MODE_PRIVATE);
@@ -71,6 +78,8 @@ public class HomeFragment extends Fragment {
         float currentSavings = savingsSharedPreferences.getFloat(SAVINGS_KEY, 0);
         float lastSavings = getLastSavings();
 
+        updateTotalAllowanceTextView();
+        updateTotalExpenseTextView();
         updateRecentTransactionsTextView();
         updateSavingsTextView(currentSavings);
         updateSavingStatusTextView(currentSavings, lastSavings);
@@ -114,6 +123,38 @@ public class HomeFragment extends Fragment {
             }
         });
         popupMenu.show();
+    }
+
+    private void updateTotalAllowanceTextView() {
+        float totalAllowance = calculateTotalAllowance();
+        NumberFormat pesoFormat = NumberFormat.getCurrencyInstance(new Locale("en", "PH"));
+        totalAllowanceTextView.setText("Total Allowance: " + pesoFormat.format(totalAllowance));
+    }
+
+    private void updateTotalExpenseTextView() {
+        float totalExpense = calculateTotalExpense();
+        NumberFormat pesoFormat = NumberFormat.getCurrencyInstance(new Locale("en", "PH"));
+        totalExpenseTextView.setText("Total Expense: " + pesoFormat.format(totalExpense));
+    }
+
+    private float calculateTotalAllowance() {
+        float totalAllowance = 0;
+        for (Transaction transaction : recentTransactions) {
+            if (transaction.getType().equals("Allowance")) {
+                totalAllowance += transaction.getAmount();
+            }
+        }
+        return totalAllowance;
+    }
+
+    private float calculateTotalExpense() {
+        float totalExpense = 0;
+        for (Transaction transaction : recentTransactions) {
+            if (transaction.getType().equals("Expense")) {
+                totalExpense += transaction.getAmount();
+            }
+        }
+        return totalExpense;
     }
 
     private void openAboutActivity() {
