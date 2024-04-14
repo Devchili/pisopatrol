@@ -35,7 +35,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 public class TransactionsFragment extends Fragment {
 
     private static final String TRANSACTION_PREFERENCES = "transaction_prefs";
@@ -65,14 +64,13 @@ public class TransactionsFragment extends Fragment {
         filterSpinner = view.findViewById(R.id.filter_spinner);
         pieChart = view.findViewById(R.id.pie_chart);
 
-        pieChart.setUsePercentValues(true);
+        pieChart.setUsePercentValues(false); // Display values as counts, not percentages
         pieChart.getDescription().setEnabled(false);
         pieChart.setExtraOffsets(5, 10, 5, 5);
         pieChart.setDragDecelerationFrictionCoef(0.95f);
         pieChart.setDrawHoleEnabled(true);
         pieChart.setHoleColor(Color.parseColor("#DADADA")); // Set hole color
         pieChart.setTransparentCircleRadius(61f);
-
 
         recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
 
@@ -91,7 +89,6 @@ public class TransactionsFragment extends Fragment {
 
         return view;
     }
-
 
     private List<Transaction> getRecentTransactionsFromSharedPreferences() {
         String json = transactionSharedPreferences.getString(TRANSACTION_LIST_KEY, "");
@@ -152,24 +149,25 @@ public class TransactionsFragment extends Fragment {
 
     private void calculateCategoryAmounts() {
         categoryAmountMap = new HashMap<>();
+
+        // Initialize counts for each category
+        categoryAmountMap.put("Food", 0f);
+        categoryAmountMap.put("Transit", 0f);
+        categoryAmountMap.put("Rent", 0f);
+        categoryAmountMap.put("School Related", 0f);
+        categoryAmountMap.put("Other", 0f);
+
         for (Transaction transaction : filteredTransactions) {
-            String category = transaction.getCategory();
-            float amount = transaction.getAmount();
             if (transaction.getType().equals("Expense")) {
-                // For Expense transactions
+                String category = transaction.getCategory();
+                // Only consider the category if it's present in total transactions
                 if (categoryAmountMap.containsKey(category)) {
-                    float currentAmount = categoryAmountMap.get(category);
-                    categoryAmountMap.put(category, currentAmount + amount);
-                } else {
-                    categoryAmountMap.put(category, amount);
-                }
-            } else if (transaction.getType().equals("Allowance")) {
-                // For Allowance transactions
-                if (categoryAmountMap.containsKey("Allowance")) {
-                    float currentAmount = categoryAmountMap.get("Allowance");
-                    categoryAmountMap.put("Allowance", currentAmount + amount);
-                } else {
-                    categoryAmountMap.put("Allowance", amount);
+                    Float currentCount = categoryAmountMap.get(category);
+                    if (currentCount != null) {
+                        categoryAmountMap.put(category, currentCount + 1); // Increment count for the category
+                    } else {
+                        categoryAmountMap.put(category, 1f); // If current count is null, initialize to 1
+                    }
                 }
             }
         }
@@ -177,18 +175,31 @@ public class TransactionsFragment extends Fragment {
 
     private void setupPieChart() {
         List<PieEntry> pieEntries = new ArrayList<>();
+        float totalExpenses = 0f;
         for (Map.Entry<String, Float> entry : categoryAmountMap.entrySet()) {
-            pieEntries.add(new PieEntry(entry.getValue(), entry.getKey()));
+            totalExpenses += entry.getValue();
+        }
+
+        for (Map.Entry<String, Float> entry : categoryAmountMap.entrySet()) {
+            float percentage = (entry.getValue() / totalExpenses) * 100;
+            if (percentage > 0) {
+                pieEntries.add(new PieEntry(percentage, entry.getKey() + " " + String.format("%.2f", percentage) + "%"));
+            }
         }
 
         PieDataSet dataSet = new PieDataSet(pieEntries, "");
         dataSet.setColors(ColorTemplate.COLORFUL_COLORS);
         dataSet.setValueTextColor(Color.BLACK);
-        dataSet.setValueTextSize(12f);
+        dataSet.setValueTextSize(10f);
+        dataSet.setDrawValues(false); // Disable displaying values on slices
 
         PieData data = new PieData(dataSet);
-        data.setValueFormatter(new PercentFormatter(pieChart));
         pieChart.setData(data);
+
+        // Set title on top of the PieChart
+        pieChart.setCenterText("Expenses Chart");
+        pieChart.setCenterTextSize(15f);
+        pieChart.setCenterTextColor(Color.BLACK);
 
         Legend legend = pieChart.getLegend();
         legend.setEnabled(true);
@@ -197,5 +208,6 @@ public class TransactionsFragment extends Fragment {
 
         pieChart.invalidate();
     }
+
 
 }

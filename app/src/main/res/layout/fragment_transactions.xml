@@ -24,7 +24,6 @@
             android:textStyle="bold" />
     <!-- Pie Chart -->
 
-    <!-- CardView for Transactions -->
     <com.github.mikephil.charting.charts.PieChart
         android:id="@+id/pie_chart"
         android:layout_width="350dp"
